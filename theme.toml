@@ -1,0 +1,14 @@
+name = "Liquid's Hugo Theme"
+license = "MIT"
+licenselink = "https://github.com/LiquidPL/hugo-theme/blob/master/LICENSE"
+description = "Simple Hugo theme used in my personal website"
+
+homepage = "https://github.com/LiquidPL/hugo-theme"
+
+tags = ["portfolio", "landing"]
+
+features = []
+
+[author]
+  name = "Krzysztof Gutkowski"
+  homepage = "https://liquid.pw"
