@@ -1,0 +1,9 @@
+// breakpoints borrowed from bootstrap
+
+$width-sm: 576px;
+$width-md: 768px;
+$width-lg: 992px;
+
+$breakpoint-sm: (min-width: $width-sm);
+$breakpoint-md: (min-width: $width-md);
+$breakpoint-lg: (min-width: $width-lg);
