@@ -4,6 +4,26 @@ $width-sm: 576px;
 $width-md: 768px;
 $width-lg: 992px;
 
-$breakpoint-sm: (min-width: $width-sm);
-$breakpoint-md: (min-width: $width-md);
-$breakpoint-lg: (min-width: $width-lg);
+@mixin media-min-sm {
+  @media(min-width: $width-sm) {
+    @content;
+  }
+}
+
+@mixin media-max-sm {
+  @media(max-width: $width-sm - 0.02px) {
+    @content;
+  }
+}
+
+@mixin media-min-md {
+  @media(min-width: $width-md) {
+    @content;
+  }
+}
+
+@mixin media-max-md {
+  @media(max-width: $width-md - 0.02px) {
+    @content;
+  }
+}

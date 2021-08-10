@@ -1,0 +1,75 @@
+@use '../breakpoints';
+@use '../colors';
+@use '../constants';
+
+.nav {
+  flex-grow: 1;
+
+  @include breakpoints.media-max-md {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100vw;
+    min-height: calc(100vh - 2 * constants.$gutter-width);
+
+    padding-top: constants.$header-height + 2 * constants.$gutter-width;
+
+    background-color: #ffffff;
+
+    z-index: constants.$z-index--nav-mobile;
+
+    transition: transform 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
+    transform: translateY(-100vh);
+  }
+
+  @include breakpoints.media-min-md {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &--active {
+    transform: translateY(0);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    list-style-type: none;
+
+    @include breakpoints.media-max-md {
+      padding: constants.$gutter-width;
+      border-bottom: 1px #999999 solid;
+    }
+
+    @include breakpoints.media-min-md {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    font-size: 24px;
+    font-weight: 700;
+
+    @include breakpoints.media-max-md {
+      margin-bottom: 15px;
+    }
+
+    @include breakpoints.media-min-md {
+      font-size: 18px;
+      font-weight: 400;
+      margin-left: 20px;
+    }
+
+    & a {
+      color: colors.$text;
+
+      &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+      }
+    }
+  }
+}

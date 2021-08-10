@@ -7,5 +7,5 @@ indent_style = space
 [*.html]
 indent_size = 4
 
-[*.{css,less,scss,js,ts,toml}]
+[*.{css,less,scss,js,json,ts,toml}]
 indent_size = 2

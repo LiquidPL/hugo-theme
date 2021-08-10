@@ -10,14 +10,18 @@
 
         {{ $style := resources.Get "scss/main.scss" | resources.ToCSS (dict "transpiler" "dartsass") | resources.Minify | resources.Fingerprint }}
 
+        <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" integrity="sha384-M86HUGbBFILBBZ9ykMAbT3nVb0+2C7yZlF8X2CiKNpDOQjKroMJqIeGZ/Le8N2Qp" crossorigin="anonymous" />
         <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity}}" />
 
         <title>{{ $title }}</title>
     </head>
     <body>
-        {{- partial "header.html" . -}}
-        {{- block "main" . }}
-        {{- end }}
-        {{- partial "footer.html" . -}}
+        <div class="page">
+            {{- partial "header.html" . -}}
+            {{- block "content" . }}
+            {{- end }}
+            {{- partial "footer.html" . -}}
+            {{- partial "scripts.html" . -}}
+        </div>
     </body>
 </html>

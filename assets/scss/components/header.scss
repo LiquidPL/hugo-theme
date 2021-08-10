@@ -1,0 +1,25 @@
+@use '../colors';
+@use '../constants';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  height: constants.$header-height;
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+
+    color: colors.$heading;
+    text-decoration: none;
+
+    z-index: constants.$z-index--header-mobile;
+
+    &:hover, &:visited, &:link, &:active {
+      text-decoration: none;
+    }
+  }
+}
