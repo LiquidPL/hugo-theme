@@ -9,6 +9,9 @@
 
   height: constants.$header-height;
 
+  border-bottom: 1px #eeeeee solid;
+  padding-bottom: constants.$gutter-width;
+
   &__title {
     font-weight: 700;
     font-size: 24px;
