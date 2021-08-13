@@ -1,15 +1,20 @@
 @use '../constants';
 
 .page {
-  max-width: constants.$max-width;
-  width: 100%;
-
-  margin: 0 auto;
-  padding: constants.$gutter-width;
   box-sizing: border-box;
 
   &__row {
+    max-width: constants.$max-width;
+    width: 100%;
+
+    padding: constants.$gutter-width;
+
+    margin: 0 auto;
     margin-bottom: constants.$gutter-width;
+
+    &--fullwidth {
+      max-width: initial;
+    }
 
     &--header {
       margin-bottom: constants.$gutter-width * 3;
