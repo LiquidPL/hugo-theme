@@ -7,7 +7,7 @@
     max-width: constants.$max-width;
     width: 100%;
 
-    padding: constants.$gutter-width;
+    padding: 0 constants.$gutter-width;
 
     margin: 0 auto;
     margin-bottom: constants.$gutter-width;
@@ -17,7 +17,8 @@
     }
 
     &--header {
-      margin-bottom: constants.$gutter-width * 3;
+      margin-top: constants.$gutter-width;
+      margin-bottom: constants.$gutter-width * 2;
     }
   }
 }
