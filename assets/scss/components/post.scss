@@ -1,0 +1,12 @@
+@use '../breakpoints';
+@use '../constants';
+@use '../colors';
+
+.post {
+  &__title {
+    font-size: constants.$font-size--heading-1;
+    color: colors.$heading;
+
+    margin-bottom: 20px;
+  }
+}
