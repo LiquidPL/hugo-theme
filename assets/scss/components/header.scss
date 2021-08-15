@@ -14,7 +14,7 @@
 
   &__title {
     font-weight: 700;
-    font-size: 24px;
+    font-size: constants.$font-size--page-title;
 
     color: colors.$heading;
     text-decoration: none;

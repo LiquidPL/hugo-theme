@@ -51,7 +51,7 @@
   }
 
   &__item {
-    font-size: 24px;
+    font-size: constants.$font-size--menu-item;
     font-weight: 700;
 
     @include breakpoints.media-max-md {
@@ -59,7 +59,7 @@
     }
 
     @include breakpoints.media-min-md {
-      font-size: 18px;
+      font-size: constants.$font-size--menu-item-desktop;
       font-weight: 400;
       margin-left: 20px;
     }
