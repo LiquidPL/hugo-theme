@@ -7,6 +7,10 @@
     font-size: constants.$font-size--heading-1;
     color: colors.$heading;
 
-    margin-bottom: 20px;
+    margin-bottom: constants.$gutter-width;
+  }
+
+  &__meta {
+    margin-bottom: constants.$gutter-width * 2;
   }
 }

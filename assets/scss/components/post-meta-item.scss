@@ -1,0 +1,7 @@
+@use '../colors';
+@use '../constants';
+
+.post-meta-item {
+  font-size: constants.$font-size--meta;
+  color: colors.$meta;
+}

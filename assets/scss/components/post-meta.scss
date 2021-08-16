@@ -1,0 +1,13 @@
+@use '../breakpoints';
+@use '../constants';
+
+.post-meta {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &__item {
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+}
