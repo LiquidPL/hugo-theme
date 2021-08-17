@@ -3,7 +3,7 @@
     <h1 class="post__title">{{ .Page.Title }}</h1>
     <div class="post__meta post-meta">
         <div class="post-meta__item post-meta-item">{{ partial "icon" "fas calendar-alt" }} {{ .PublishDate.Format "2006-01-02, 15:04 MST" }}</div>
-        <div class="post-meta__item post-meta-item">{{ partial "icon" "fas clock" }} {{ .ReadingTime }} min read</div>
+        <div class="post-meta__item post-meta-item">{{ partial "icon" "fas clock" }} {{ i18n "readingTime" .ReadingTime }}</div>
     </div>
     <div class="post__content">
         {{ .Content }}

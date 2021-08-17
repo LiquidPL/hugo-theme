@@ -1,0 +1,4 @@
+readingTime:
+  one: '{{ .Count }} minuta czytania'
+  two: '{{ .Count }} minut czytania'
+  other: '{{ .Count }} minut czytania'
