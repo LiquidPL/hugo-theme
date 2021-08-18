@@ -26,8 +26,9 @@
 
   @include breakpoints.media-min-md {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
   }
 
   &--active {

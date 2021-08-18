@@ -1,0 +1,13 @@
+<li class="nav__item language-switcher">
+    {{ range .Site.Home.AllTranslations }}
+        {{- $active := eq .Lang $.Site.Language.Lang -}}
+        <a
+            class="language-switcher__item {{ if $active }}language-switcher__item--active{{ end }}"
+            {{ if (not $active) }}
+                href="{{ .Permalink }}"
+            {{ end }}
+        >
+            {{ upper .Language.Lang }}
+        </a>
+    {{ end }}
+</li>

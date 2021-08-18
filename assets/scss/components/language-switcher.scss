@@ -1,0 +1,28 @@
+@use '../breakpoints';
+@use '../colors';
+@use '../constants';
+
+.language-switcher {
+  display: flex;
+  flex-direction: row;
+
+  &__item {
+    &--active {
+      font-weight: 900;
+
+      @include breakpoints.media-min-md {
+        font-weight: 700;
+      }
+    }
+
+    &:not(:last-of-type) {
+      &:after {
+        content: '/';
+        color: colors.$disabled;
+        font-weight: 700;
+
+        padding: 0 5px;
+      }
+    }
+  }
+}

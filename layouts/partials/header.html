@@ -2,7 +2,7 @@
     <div class="header">
         <a class="header__title" href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
         <nav class="nav js--nav" role="navigation">
-            {{- if .Site.Menus.main -}}
+            {{ if .Site.Menus.main }}
             <ul class="nav__list">
                 {{ range .Site.Menus.main }}
                 {{- $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) -}}
@@ -10,9 +10,14 @@
                     <a href="{{ .URL }}">{{ .Name }}</a>
                 </li>
                 {{ end }}
+                {{ if .Site.IsMultiLingual }}
+                    {{- partial "language-switcher" . -}}
+                {{ end }}
             </ul>
-            {{- end -}}
+            {{ end }}
         </nav>
+
+
         <div class="header__hamburger hamburger js--hamburger">
             <div class="hamburger__slice"></div>
             <div class="hamburger__slice"></div>
