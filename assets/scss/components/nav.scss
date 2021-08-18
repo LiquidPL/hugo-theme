@@ -53,10 +53,10 @@
 
   &__item {
     font-size: constants.$font-size--menu-item;
-    font-weight: 700;
+    font-weight: 400;
 
     &--active {
-      font-weight: 900;
+      font-weight: 700;
     }
 
     @include breakpoints.media-max-md {
@@ -65,12 +65,7 @@
 
     @include breakpoints.media-min-md {
       font-size: constants.$font-size--menu-item-desktop;
-      font-weight: 400;
       margin-left: 20px;
-
-      &--active {
-        font-weight: 700;
-      }
     }
 
     & a {
