@@ -1,12 +1,15 @@
 @use 'fonts';
 @use 'core';
 
-@use 'components/icon';
 @use 'components/page';
+
 @use 'components/header';
 @use 'components/hamburger';
 @use 'components/nav';
+@use 'components/language-switcher';
+
+@use 'components/icon';
+
 @use 'components/post';
 @use 'components/post-meta';
 @use 'components/post-meta-item';
-@use 'components/language-switcher';
