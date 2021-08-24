@@ -4,7 +4,7 @@
     <h2 class="landing__subtitle">{{ .Params.subtitle }}</h2>
     <div class="landing__links">
         {{ range .Params.links }}
-            <a class="landing__link landing-link" href="{{ .url }}">{{ partial "icon" .icon }}</a>
+            <a class="landing__link landing-link" href="{{ .url }}" target="_blank">{{ partial "icon" .icon }}</a>
         {{ end }}
     </div>
     {{ .Content }}
