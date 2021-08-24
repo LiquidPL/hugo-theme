@@ -3,8 +3,6 @@
 @use '../constants';
 
 .nav {
-  flex-grow: 1;
-
   @include breakpoints.media-max-md {
     position: absolute;
 
@@ -29,6 +27,7 @@
     flex-direction: row;
     justify-content: end;
     align-items: center;
+    margin-left: auto;
   }
 
   &--active {

@@ -1,5 +1,12 @@
 {{ define "content" }}
-<div class="page__row">
+<div class="page__row page__row--fullwidth landing">
+    <h1 class="landing__title">{{ cond (ne .Page.Title "") .Page.Title .Site.Title }}</h1>
+    <h2 class="landing__subtitle">{{ .Params.subtitle }}</h2>
+    <div class="landing__links">
+        {{ range .Params.links }}
+            <a class="landing__link landing-link" href="{{ .url }}">{{ partial "icon" .icon }}</a>
+        {{ end }}
+    </div>
     {{ .Content }}
 </div>
 {{ end }}

@@ -2,6 +2,8 @@
 @use '../constants';
 
 .header {
+  $this: &;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11,6 +13,10 @@
 
   border-bottom: 1px #eeeeee solid;
   padding-bottom: constants.$gutter-width;
+
+  &--home {
+    border: none;
+  }
 
   &__title {
     font-weight: 700;
@@ -23,6 +29,10 @@
 
     &:hover, &:visited, &:link, &:active {
       text-decoration: none;
+    }
+
+    #{$this}--home & {
+      display: none;
     }
   }
 }

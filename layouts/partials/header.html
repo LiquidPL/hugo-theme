@@ -1,5 +1,5 @@
 <div class="page__row page__row--header">
-    <div class="header">
+    <div class="header {{ if .Page.IsHome }}header--home{{ end }}">
         <a class="header__title" href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
         <nav class="nav js--nav" role="navigation">
             {{ if .Site.Menus.main }}

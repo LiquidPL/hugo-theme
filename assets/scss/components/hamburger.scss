@@ -7,6 +7,8 @@
 .hamburger {
   $this: &;
 
+  margin-left: auto;
+
   @include breakpoints.media-min-md {
     display: none;
   }

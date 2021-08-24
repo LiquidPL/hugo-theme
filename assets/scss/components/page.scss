@@ -5,7 +5,6 @@
 
   &__row {
     max-width: constants.$max-width;
-    width: calc(100% - constants.$gutter-width * 2);
 
     padding: 0 constants.$gutter-width;
 

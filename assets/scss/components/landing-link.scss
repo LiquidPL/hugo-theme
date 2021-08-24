@@ -1,0 +1,11 @@
+@use '../colors';
+
+.landing-link {
+  width: 40px;
+  height: 40px;
+
+  font-size: 40px;
+  line-height: 1;
+
+  color: colors.$heading;
+}
