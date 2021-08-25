@@ -1,10 +1,13 @@
 import NavMobile from "./nav-mobile";
+import LandingTooltip from "./landing-tooltip";
 
 class App {
   navMobile: NavMobile;
+  landingTooltip: LandingTooltip;
 
   constructor() {
     this.navMobile = new NavMobile();
+    this.landingTooltip = new LandingTooltip();
   }
 }
 

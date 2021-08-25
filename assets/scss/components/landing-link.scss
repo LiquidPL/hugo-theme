@@ -8,4 +8,10 @@
   line-height: 1;
 
   color: colors.$heading;
+
+  & .icon {
+    // this ensures we can catch the proper element instead
+    // of the svg icon in the click event handler
+    pointer-events: none;
+  }
 }

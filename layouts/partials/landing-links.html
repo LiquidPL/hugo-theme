@@ -1,0 +1,21 @@
+{{ if isset .Site.Params "links" }}
+    <div class="landing__links">
+        {{ range .Site.Params.links }}
+            {{- $hasTooltip := (isset . "tooltip") -}}
+            <a
+                class="landing__link landing-link {{ if $hasTooltip }}js--landing-link-tooltip{{ end }}"
+                title="{{ .name }}"
+                href="{{ .url }}"
+                {{ if not $hasTooltip }}
+                    target="_blank"
+                {{ end }}
+                {{ if $hasTooltip }}
+                    data-id="{{ .id }}"
+                    data-tooltip="{{ .tooltip }}"
+                {{ end }}
+            >
+                {{ partial "icon" .icon }}
+            </a>
+        {{ end }}
+    </div>
+{{ end }}

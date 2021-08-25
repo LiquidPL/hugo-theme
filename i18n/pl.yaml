@@ -2,3 +2,5 @@ readingTime:
   one: '{{ .Count }} minuta czytania'
   two: '{{ .Count }} minut czytania'
   other: '{{ .Count }} minut czytania'
+copiedToClipboard:
+  other: skopiowano do schowka!

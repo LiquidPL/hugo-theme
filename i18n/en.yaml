@@ -1,2 +1,4 @@
 readingTime:
   other: '{{ .Count }} minute read'
+copiedToClipboard:
+  other: copied to clipboard!

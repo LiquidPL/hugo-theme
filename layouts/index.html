@@ -1,12 +1,17 @@
 {{ define "content" }}
-<div class="page__row page__row--fullwidth landing">
-    <h1 class="landing__title">{{ cond (ne .Page.Title "") .Page.Title .Site.Title }}</h1>
-    <h2 class="landing__subtitle">{{ .Params.subtitle }}</h2>
-    <div class="landing__links">
-        {{ range .Params.links }}
-            <a class="landing__link landing-link" href="{{ .url }}" target="_blank">{{ partial "icon" .icon }}</a>
+    <div class="page__row {{ if .Params.fullwidth }}page__row--fullwidth{{ end }} {{ if .Params.landing }}landing{{ end }}">
+        {{ if .Params.landing }}
+            <h1 class="landing__title">{{ cond (ne .Page.Title "") .Page.Title .Site.Title }}</h1>
+            <h2 class="landing__subtitle">{{ .Params.landingSubtitle }}</h2>
+
+            {{- partial "landing-links" . -}}
         {{ end }}
+        {{ .Content }}
     </div>
-    {{ .Content }}
-</div>
+{{ end }}
+
+{{ define "scripts" }}
+    <script class="js--i18n" type="application/json">
+    {"copiedToClipboard": "{{ i18n "copiedToClipboard" }}"}
+    </script>
 {{ end }}

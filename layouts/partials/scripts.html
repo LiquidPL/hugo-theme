@@ -1,3 +1,3 @@
-{{ $script := resources.Get "ts/main.ts" | js.Build }}
+{{ $script := resources.Get "ts/main.ts" | js.Build | resources.Fingerprint }}
 
-<script type="text/javascript" src="{{ $script.RelPermalink }}" ></script>
+<script type="text/javascript" src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>

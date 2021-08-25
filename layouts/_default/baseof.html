@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:title" content="{{ $title }}">
 
-        {{ $options := (dict "transpiler" "dartsass" "outputStyle" (cond hugo.IsProduction "compressed" "expanded") "enableSourceMap" (not hugo.IsProduction)) }}
+        {{ $options := (dict "transpiler" "dartsass" "outputStyle" (cond hugo.IsProduction "compressed" "expanded") "enableSourceMap" (not hugo.IsProduction) "includePaths" (slice "node_modules")) }}
         {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint }}
 
         <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" integrity="sha384-M86HUGbBFILBBZ9ykMAbT3nVb0+2C7yZlF8X2CiKNpDOQjKroMJqIeGZ/Le8N2Qp" crossorigin="anonymous" />
@@ -22,6 +22,9 @@
             {{- block "content" . }}
             {{- end }}
             {{- partial "footer.html" . -}}
+
+            {{- block "scripts" . -}}
+            {{- end -}}
             {{- partial "scripts.html" . -}}
 
             {{- partial "icon-data" . -}}

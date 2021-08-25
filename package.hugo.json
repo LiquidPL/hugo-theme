@@ -1,0 +1,16 @@
+{
+  "name": "hugo-theme",
+  "description": "Simple Hugo theme used in my personal website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiquidPL/hugo-theme.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LiquidPL/hugo-theme/issues"
+  },
+  "homepage": "https://github.com/LiquidPL/hugo-theme#readme",
+  "dependencies": {
+    "tippy.js": "^6.3.1"
+  }
+}
