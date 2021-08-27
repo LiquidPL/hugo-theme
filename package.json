@@ -11,11 +11,13 @@
   },
   "homepage": "https://github.com/LiquidPL/hugo-theme#readme",
   "dependencies": {
+    "dayjs": "^1.10.6",
     "tippy.js": "^6.3.1"
   },
   "devDependencies": {},
   "comments": {
     "dependencies": {
+      "dayjs": "project",
       "tippy.js": "project"
     },
     "devDependencies": {}

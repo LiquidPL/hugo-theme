@@ -2,8 +2,9 @@
 <div class="page__row post">
     <h1 class="post__title">{{ .Page.Title }}</h1>
     <div class="post__meta post-meta">
-        <div class="post-meta__item post-meta-item">{{ partial "icon" "fas calendar-alt" }} {{ .PublishDate.Format "2006-01-02, 15:04 MST" }}</div>
-        <div class="post-meta__item post-meta-item">{{ partial "icon" "fas clock" }} {{ i18n "readingTime" .ReadingTime }}</div>
+        {{- partial "post-meta/publish-date" . -}}
+        {{- partial "post-meta/last-modified" . -}}
+        {{- partial "post-meta/reading-time" . -}}
     </div>
     <div class="post__content">
         {{ .Content }}

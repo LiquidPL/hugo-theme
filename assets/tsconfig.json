@@ -4,6 +4,8 @@
     "target": "es6",
     "moduleResolution": "node",
     "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "../../../",
     "paths": {
       "*": [
