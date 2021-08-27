@@ -1,4 +1,6 @@
-<div class="post-meta__item post-meta-item">
+<div class="post-meta__item post-meta-item js--publish-date" data-timestamp="{{ .PublishDate.Format "2006-01-02T15:04:05Z0700" }}">
     {{ partial "icon" "fas calendar-alt" }}
-    {{ .PublishDate.Format "2006-01-02, 15:04 MST" }}
+    <span class="js--date-value">
+        {{ .PublishDate.Format "2006-01-02, 15:04 MST" }}
+    </span>
 </div>

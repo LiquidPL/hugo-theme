@@ -8,7 +8,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 
 export default class TimeFormat {
-  lastModifiedFields: HTMLElement[] = [];
+  fields: HTMLElement[] = [];
 
   constructor() {
     dayjs.extend(relativeTime);
@@ -23,25 +23,44 @@ export default class TimeFormat {
         break;
     }
 
-    this.lastModifiedFields = Array.prototype.filter.call(
-      document.getElementsByClassName('js--last-modified'),
-      (element) => element instanceof HTMLElement
-    ) as HTMLElement[];
+    const publishDateFields = Array.from(document.querySelectorAll('.js--publish-date'));
+    const lastModifiedFields = Array.from(document.querySelectorAll('.js--last-modified'));
 
-    this.setLastModified();
+    this.fields = publishDateFields.concat(lastModifiedFields)
+      .filter((element) => element instanceof HTMLElement) as HTMLElement[];
+
+    console.log(this.fields);
+
+    this.setDates();
   }
 
-  private setLastModified() {
-    for (const element of this.lastModifiedFields) {
-      const timestamp = dayjs(element.dataset.lastModified);
+  private setDates() {
+    for (const element of this.fields) {
+      const timestamp = dayjs(element.dataset.timestamp);
 
-      const lastModified = timestamp.fromNow();
+      if (element.classList.contains('js--publish-date')) {
+        this.setValue(element, timestamp.format('LLLL'));
 
-      element.innerHTML += lastModified;
+        tippy(element, {
+          content: timestamp.format('YYYY-MM-DD, HH:mm Z'),
+        });
+      } else if (element.classList.contains('js--last-modified')) {
+        this.setValue(element, timestamp.fromNow());
 
-      tippy(element, {
-        content: timestamp.format('LLLL'),
-      });
+        tippy(element, {
+          content: timestamp.format('LLLL'),
+        });
+      }
     }
+  }
+
+  private setValue(element: HTMLElement, value: string) {
+    const valueElement = element.querySelector('.js--date-value');
+
+    if (valueElement === null) {
+      return;
+    }
+
+    valueElement.textContent = value;
   }
 }
