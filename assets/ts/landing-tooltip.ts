@@ -14,10 +14,16 @@ interface Dataset {
 
 export default class LandingTooltip {
   tooltips: { [key: string]: Tooltip } = {};
-  copiedMessage: string;
+  copiedMessage: string = '';
 
   constructor() {
-    this.copiedMessage = JSON.parse(document.querySelector('.js--i18n')?.textContent ?? '').copiedToClipboard;
+    const json = document.querySelector('.js--i18n');
+
+    if (json === null) {
+      return;
+    }
+
+    this.copiedMessage = JSON.parse(json.textContent ?? '').copiedToClipboard;
 
     const targets = document.getElementsByClassName('js--landing-link-tooltip');
 
