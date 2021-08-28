@@ -17,11 +17,12 @@
             </ul>
         </nav>
 
-
-        <div class="header__hamburger hamburger js--hamburger">
-            <div class="hamburger__slice"></div>
-            <div class="hamburger__slice"></div>
-            <div class="hamburger__slice"></div>
-        </div>
+        {{ if or .Site.Menus.main .Site.IsMultiLingual }}
+            <div class="header__hamburger hamburger js--hamburger">
+                <div class="hamburger__slice"></div>
+                <div class="hamburger__slice"></div>
+                <div class="hamburger__slice"></div>
+            </div>
+        {{ end }}
     </div>
 </div>
