@@ -29,8 +29,6 @@ export default class TimeFormat {
     this.fields = publishDateFields.concat(lastModifiedFields)
       .filter((element) => element instanceof HTMLElement) as HTMLElement[];
 
-    console.log(this.fields);
-
     this.setDates();
   }
 
