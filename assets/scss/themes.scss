@@ -1,0 +1,23 @@
+@use 'colors';
+
+:root[data-theme='light'] {
+  --color-background: #{colors.$background--light};
+  --color-text: #{colors.$text--light};
+  --color-heading: #{colors.$heading--light};
+  --color-meta: #{colors.$meta--light};
+  --color-nav-spacer: #{colors.$nav-spacer--light};
+}
+
+:root[data-theme='dark'] {
+  --color-background: #{colors.$background--dark};
+  --color-text: #{colors.$text--dark};
+  --color-heading: #{colors.$heading--dark};
+  --color-meta: #{colors.$meta--dark};
+  --color-nav-spacer: #{colors.$nav-spacer--dark};
+}
+
+* {
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}

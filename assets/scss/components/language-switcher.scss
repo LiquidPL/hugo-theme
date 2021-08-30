@@ -1,5 +1,4 @@
 @use '../breakpoints';
-@use '../colors';
 @use '../constants';
 
 .language-switcher {
@@ -19,7 +18,7 @@
 
   &__spacer {
     font-weight: 700;
-    color: colors.$disabled;
+    opacity: 0.3;
 
     padding: 0 5px;
   }

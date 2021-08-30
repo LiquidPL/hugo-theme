@@ -1,5 +1,4 @@
 @use '../breakpoints';
-@use '../colors';
 @use '../constants';
 
 .nav {
@@ -14,7 +13,7 @@
 
     padding-top: constants.$header-height + 2 * constants.$gutter-width;
 
-    background-color: #ffffff;
+    background-color: var(--color-background);
 
     z-index: constants.$z-index--nav-mobile;
 
@@ -42,7 +41,7 @@
 
     @include breakpoints.media-max-md {
       padding: constants.$gutter-width;
-      border-bottom: 1px #999999 solid;
+      border-bottom: 1px var(--color-nav-spacer) solid;
     }
 
     @include breakpoints.media-min-md {
@@ -68,7 +67,7 @@
     }
 
     & a {
-      color: colors.$text;
+      color: var(--color-text);
 
       &:hover, &:visited, &:link, &:active {
         text-decoration: none;
