@@ -15,14 +15,12 @@
       }
     }
 
-    &:not(:last-of-type) {
-      &:after {
-        content: '/';
-        color: colors.$disabled;
-        font-weight: 700;
+  }
 
-        padding: 0 5px;
-      }
-    }
+  &__spacer {
+    font-weight: 700;
+    color: colors.$disabled;
+
+    padding: 0 5px;
   }
 }

@@ -1,5 +1,5 @@
 <li class="nav__item language-switcher">
-    {{ range .Site.Home.AllTranslations }}
+    {{ range $i, $translation := .Site.Home.AllTranslations }}
         {{- $active := eq .Lang $.Site.Language.Lang -}}
         {{- $tag := cond $active "span" "a" -}}
         {{ printf "<%s" $tag | safeHTML }}
@@ -10,5 +10,8 @@
         >
             {{ upper .Language.Lang }}
         {{ printf "</%s>" $tag | safeHTML }}
+        {{ if not (eq (add $i 1) (len $.Site.Home.AllTranslations)) }}
+            <span class="language-switcher__spacer">/</span>
+        {{ end }}
     {{ end }}
 </li>
