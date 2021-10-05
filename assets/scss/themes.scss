@@ -16,8 +16,8 @@
   --color-nav-spacer: #{colors.$nav-spacer--dark};
 }
 
-* {
+[data-theme-transitions-enabled='true'] * {
   transition-property: background-color, color;
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
 }

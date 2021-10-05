@@ -2,19 +2,21 @@
     <div class="header {{ if .Page.IsHome }}header--home{{ end }}">
         <a class="header__title" href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
         <nav class="nav js--nav" role="navigation">
-            <ul class="nav__list">
-                {{ if .Site.Menus.main }}
-                    {{ range .Site.Menus.main }}
-                    {{- $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) -}}
-                    <li class="nav__item {{ if $active }}nav__item--active{{ end }}">
-                        <a href="{{ .URL }}">{{ .Name }}</a>
-                    </li>
+            <div class="nav__container">
+                <ul class="nav__list">
+                    {{ if .Site.Menus.main }}
+                        {{ range .Site.Menus.main }}
+                        {{- $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) -}}
+                        <li class="nav__item {{ if $active }}nav__item--active{{ end }}">
+                            <a href="{{ .URL }}">{{ .Name }}</a>
+                        </li>
+                        {{ end }}
                     {{ end }}
-                {{ end }}
-                {{ if .Site.IsMultiLingual }}
-                    {{- partial "language-switcher" . -}}
-                {{ end }}
-            </ul>
+                    {{ if .Site.IsMultiLingual }}
+                        {{- partial "language-switcher" . -}}
+                    {{ end }}
+                </ul>
+            </div>
         </nav>
 
         {{ if or .Site.Menus.main .Site.IsMultiLingual }}

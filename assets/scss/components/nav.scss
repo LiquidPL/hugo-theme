@@ -2,23 +2,20 @@
 @use '../constants';
 
 .nav {
+  $this: '.nav';
+
   @include breakpoints.media-max-md {
     position: absolute;
 
     left: 0;
     top: 0;
 
-    width: 100vw;
-    min-height: calc(100vh - 2 * constants.$gutter-width);
-
-    padding-top: constants.$header-height + 2 * constants.$gutter-width;
-
-    background-color: var(--color-background);
-
-    z-index: constants.$z-index--nav-mobile;
-
-    transition: transform 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
     transform: translateY(-100vh);
+    transition: transform 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
+
+    &--active {
+      transform: translateY(0);
+    }
   }
 
   @include breakpoints.media-min-md {
@@ -29,8 +26,17 @@
     margin-left: auto;
   }
 
-  &--active {
-    transform: translateY(0);
+  &__container {
+    @include breakpoints.media-max-md {
+      width: 100vw;
+      min-height: calc(100vh - 2 * constants.$gutter-width);
+
+      background-color: var(--color-background);
+
+      padding-top: constants.$header-height + 2 * constants.$gutter-width;
+
+      z-index: constants.$z-index--nav-mobile;
+    }
   }
 
   &__list {
@@ -58,12 +64,12 @@
     }
 
     @include breakpoints.media-max-md {
-      margin-bottom: 15px;
+      margin-bottom: constants.$header-spacing--mobile;
     }
 
     @include breakpoints.media-min-md {
       font-size: constants.$font-size--menu-item-desktop;
-      margin-left: 20px;
+      margin-left: constants.$header-spacing--desktop;
     }
 
     & a {
