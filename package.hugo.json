@@ -13,6 +13,8 @@
   "homepage": "https://github.com/LiquidPL/hugo-theme#readme",
   "dependencies": {
     "dayjs": "^1.10.6",
-    "tippy.js": "^6.3.1"
-  }
+    "tippy.js": "^6.3.1",
+    "js-cookie": "^3.0.0"
+  },
+  "devDependencies": {}
 }

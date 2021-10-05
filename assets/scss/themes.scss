@@ -17,7 +17,7 @@
 }
 
 [data-theme-transitions-enabled='true'] * {
-  transition-property: background-color, color;
+  transition-property: background-color, color, border;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
 }

@@ -1,3 +1,11 @@
 fas calendar-alt:
 fas clock:
 fas history:
+
+theme-light:
+  id: fas sun
+  title: ''
+
+theme-dark:
+  id: fas moon
+  title: ''
