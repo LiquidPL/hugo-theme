@@ -10,3 +10,9 @@ body {
 
   @include themes.use-transitions(color, background-color);
 }
+
+a {
+  color: var(--color-heading);
+
+  @include themes.use-transitions(color);
+}

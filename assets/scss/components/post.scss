@@ -15,4 +15,9 @@
   &__meta {
     margin-bottom: constants.$gutter-width * 2;
   }
+
+  &__read-more {
+    margin-top: constants.$gutter-width;
+    font-weight: 700;
+  }
 }

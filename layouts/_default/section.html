@@ -1,0 +1,14 @@
+{{ define "content" }}
+    <div class="page__row">
+        {{ .Content }}
+    </div>
+    {{ range .Pages }}
+        <div class="page__row post">
+            {{- partial "post-intro" (dict "context" . "rootPage" $.Page) -}}
+            <p class="post__content">
+                {{ .Summary }}
+            </p>
+            <a href="{{ .RelPermalink }}" class="post__read-more">{{ i18n "readMore" }}</a>
+        </div>
+    {{ end }}
+{{ end }}

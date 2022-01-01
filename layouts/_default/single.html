@@ -1,11 +1,6 @@
 {{ define "content" }}
 <div class="page__row post">
-    <h1 class="post__title">{{ .Page.Title }}</h1>
-    <div class="post__meta post-meta">
-        {{- partial "post-meta/publish-date" . -}}
-        {{- partial "post-meta/last-modified" . -}}
-        {{- partial "post-meta/reading-time" . -}}
-    </div>
+    {{- partial "post-intro" (dict "context" . "rootPage" $.Page) -}}
     <div class="post__content">
         {{ .Content }}
     </div>

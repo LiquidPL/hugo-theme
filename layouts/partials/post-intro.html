@@ -1,0 +1,14 @@
+<h1 class="post__title">
+    {{ if .rootPage.IsSection }}
+        <a href="{{ .context.RelPermalink }}">
+    {{ end }}
+    {{ .context.Page.Title }}
+    {{ if .rootPage.IsSection }}
+        </a>
+    {{ end }}
+</h1>
+<div class="post__meta post-meta">
+    {{- partial "post-meta/publish-date" .context -}}
+    {{- partial "post-meta/last-modified" .context -}}
+    {{- partial "post-meta/reading-time" .context -}}
+</div>

@@ -4,3 +4,5 @@ readingTime:
   other: '{{ .Count }} minut czytania'
 copiedToClipboard:
   other: skopiowano do schowka!
+readMore:
+  other: Czytaj dalej…
