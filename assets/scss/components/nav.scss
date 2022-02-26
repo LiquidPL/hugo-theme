@@ -1,5 +1,6 @@
 @use '../breakpoints';
 @use '../constants';
+@use '../themes';
 
 .nav {
   $this: '.nav';
@@ -36,6 +37,8 @@
       padding-top: constants.$header-height + 2 * constants.$gutter-width;
 
       z-index: constants.$z-index--nav-mobile;
+
+      @include themes.use-transitions(background-color);
     }
   }
 
@@ -48,6 +51,8 @@
     @include breakpoints.media-max-md {
       padding: constants.$gutter-width;
       border-bottom: 1px var(--color-nav-spacer) solid;
+
+      @include themes.use-transitions(border-bottom);
     }
 
     @include breakpoints.media-min-md {
@@ -74,6 +79,8 @@
 
     & a {
       color: var(--color-text);
+
+      @include themes.use-transitions(color);
 
       &:hover, &:visited, &:link, &:active {
         text-decoration: none;

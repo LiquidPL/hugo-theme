@@ -1,5 +1,6 @@
 @use '../breakpoints';
 @use '../constants';
+@use '../themes';
 
 .theme-switcher {
   display: flex;
@@ -23,6 +24,8 @@
     border: 2px var(--color-text) solid;
     border-radius: 15px;
     cursor: pointer;
+
+    @include themes.use-transitions(border);
   }
 
   &__slider-toggle {
@@ -37,11 +40,7 @@
 
     background-color: var(--color-text);
 
-    :root[data-theme-transitions-enabled='true'] & {
-      transition-property: transform, background-color;
-      transition-duration: 0.2s;
-      transition-timing-function: ease-in-out;
-    }
+    @include themes.use-transitions(transform, background-color);
 
     :root[data-theme='light'] & {
       transform: translate(0);

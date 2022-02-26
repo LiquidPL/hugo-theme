@@ -2,6 +2,7 @@
 
 @use '../breakpoints';
 @use '../constants';
+@use '../themes';
 
 .hamburger {
   $this: &;
@@ -28,7 +29,7 @@
     pointer-events: none;
 
     transition: transform 0.3s cubic-bezier(0.77,0.2,0.05,1.0),
-                background 0.3s cubic-bezier(0.77,0.2,0.05,1.0),
+                background themes.$theme-transition-duration cubic-bezier(0.77,0.2,0.05,1.0),
                 opacity 0.35s ease;
 
     #{$this}--checked &:nth-of-type(1) {

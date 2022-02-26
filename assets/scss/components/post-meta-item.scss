@@ -1,6 +1,9 @@
 @use '../constants';
+@use '../themes';
 
 .post-meta-item {
   font-size: constants.$font-size--meta;
   color: var(--color-meta);
+
+  @include themes.use-transitions(color);
 }

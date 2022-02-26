@@ -1,4 +1,5 @@
 @use '../constants';
+@use '../themes';
 
 .header {
   $this: &;
@@ -13,6 +14,8 @@
   border-bottom: 1px var(--color-nav-spacer) solid;
   padding-bottom: constants.$gutter-width;
 
+  @include themes.use-transitions(border-bottom-color);
+
   &--home {
     border: none;
   }
@@ -25,6 +28,8 @@
     text-decoration: none;
 
     z-index: constants.$z-index--header-mobile;
+
+    @include themes.use-transitions(color);
 
     &:hover, &:visited, &:link, &:active {
       text-decoration: none;

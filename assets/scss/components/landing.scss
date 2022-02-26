@@ -1,4 +1,5 @@
 @use '../breakpoints';
+@use '../themes';
 
 .landing {
   display: flex;
@@ -14,6 +15,8 @@
     margin-bottom: 0.1em;
 
     color: var(--color-heading);
+
+    @include themes.use-transitions(color);
 
     @include breakpoints.media-min-md {
       font-size: 96px;

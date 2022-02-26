@@ -1,5 +1,6 @@
 @use '../breakpoints';
 @use '../constants';
+@use '../themes';
 
 .post {
   &__title {
@@ -7,6 +8,8 @@
     color: var(--color-heading);
 
     margin-bottom: constants.$gutter-width;
+
+    @include themes.use-transitions(color);
   }
 
   &__meta {

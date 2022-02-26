@@ -1,3 +1,5 @@
+@use '../themes';
+
 .landing-link {
   width: 40px;
   height: 40px;
@@ -6,6 +8,8 @@
   line-height: 1;
 
   color: var(--color-heading);
+
+  @include themes.use-transitions(color);
 
   & .icon {
     // this ensures we can catch the proper element instead
