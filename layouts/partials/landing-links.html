@@ -13,6 +13,11 @@
                     data-id="{{ .id }}"
                     data-tooltip="{{ .tooltip }}"
                 {{ end }}
+                {{ if isset . "attributes" }}
+                    {{ range $attr, $value := .attributes }}
+                        {{ safeHTMLAttr $attr }}="{{ $value }}"
+                    {{ end }}
+                {{ end }}
             >
                 {{ partial "icon" .icon }}
             </a>
